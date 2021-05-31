@@ -6,15 +6,37 @@ const contentStyle = {
 };
 
 export default function CustomModal(props) {
+  
+  function deletefile(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+        console.log(this);
+        }
+    };
+    var filenew = props.propname;
+    let json = require('../files.json');
+    var fileid = json[filenew];
+    // console.log(filenew,fileid);
+    xhttp.open("GET", "http://localhost:5000/delete?id="+fileid, true);
+    xhttp.send();
+    // console.log(props.propname);
+  }
+
   function download(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText);
+        if (this.readyState == 4) {
+        console.log(this);
         }
     };
-    xhttp.open("GET", "http://localhost:5000/upload?id=test.txt&filename=1K8odyKSu5eAZfAcn0ddMuwNxhzLoqhAR", true);
+    var filenew = props.propname;
+    let json = require('../files.json');
+    var fileid = json[filenew];
+    // console.log(filenew,fileid);
+    xhttp.open("GET", "http://localhost:5000/download?id="+fileid+"&name="+filenew, true);
     xhttp.send();
+    // console.log(props.propname);
   }
     return(
   <Popup
@@ -32,17 +54,15 @@ export default function CustomModal(props) {
         </div>
         <div className="actions">
           <button
-            className="buttond" onClick={download}
+            className="buttond"  onClick={download}
           >
             📁 Download 
           </button>
           <button
             className="buttonc"
-            onClick={() => {
-              close();
-            }}
+            onClick={deletefile}
           >
-           ❌ No
+           ❌Delete
           </button>
         </div>
       </div>

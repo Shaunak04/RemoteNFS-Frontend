@@ -12,7 +12,7 @@ export default function SideMenu(props) {
     var imgArr=[userphotos,userphotos1,userphotos2,userphotos3,userphotos4];
     function printname()
     {
-        console.log("Hello");
+        alert("Mount error: No user found on network(localhost:5000)");
     }
     let index_num=0;
     let array= [
@@ -20,8 +20,6 @@ export default function SideMenu(props) {
         {name:"Shaunak",files:["file1.txt","file2.pdf","newfile.txt"]},
         {name:"Saumitra",files:[".docx","folder.txt","syllabus.pdf"]},
         {name:"Anmol",files:["file1.txt","folder.txt","change.ppt"]},
-        {name:"Nikhil",files:[".docx","folder.txt","covid.cpp"]},
-        {name:"Ansh",files:["report.txt","codes.txt","change.ppt"]},
     ];
     for(var i=2;i<array.length;i++)
     {
@@ -43,7 +41,7 @@ export default function SideMenu(props) {
             <div className="user-list">
                 <div className="user1" onClick={() => printname()}>
                     <span className="user-photo"><img src={imgArr[0]} alt="userphoto" style={{height:50,borderRadius:'100%'}}/></span>
-                    <span className="user-name">{array[1].name}</span>
+                    <span className="user-name">{array[1].name} </span>
                 </div>
                 <hr/>
                 <div className="online">Other users ({array.length-2})</div>

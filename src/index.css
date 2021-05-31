@@ -96,6 +96,8 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
+  /* overflow-x: hidden; */
   /* height: 15px; */
   background: #d83b48;
   font-size: 2.5vh;
@@ -204,4 +206,13 @@ code {
 .popup-content{
   padding:0px;
   border-radius: 15px;
+}
+
+.uploadbtn{
+  border: 2px solid white;
+  background-color: #2f5974;
+  color: white;
+  margin:10px;
+  padding: 2px 15px;
+  border-radius: 5px;
 }

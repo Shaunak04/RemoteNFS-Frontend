@@ -1,6 +1,4 @@
-var jsonObj = {
-  files: 
-      {
-          "RemoteNFS": "1zLjwTIE8epIlyHcJeXMaOXoPAn14Mt2J",
-      }
+{
+    "test.txt": "1K8odyKSu5eAZfAcn0ddMuwNxhzLoqhAR",
+    "dog.png": "1Nu9Yx16IPUWODkSJ24rgbQ1Vq4qNPOtb"
 }
